@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -13,7 +14,7 @@
       --spec-color: #9b59b6;
     }
 
-    body {
+  body {
       font-family: 'Courier New', Courier, monospace;
       background-color: var(--bg-color);
       color: white;
@@ -24,7 +25,7 @@
       padding: 20px;
     }
 
-    /* O Cenário do Jogo [cite: 92] */
+   /* O Cenário do Jogo [cite: 92] */
     #game-view {
       position: relative;
       width: 300px;
@@ -36,7 +37,7 @@
       box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
     }
 
-    /* Nível do Mar e Reta Numérica [cite: 101, 144] */
+  /* Nível do Mar e Reta Numérica [cite: 101, 144] */
     .grid-line {
       position: absolute;
       width: 100%;
@@ -46,19 +47,19 @@
       align-items: center;
     }
 
-    .grid-line span {
+  .grid-line span {
       font-size: 10px;
       margin-left: 5px;
       background: rgba(0, 0, 0, 0.5);
     }
 
-    #zero-level {
+   #zero-level {
       height: 3px;
       background: white;
       z-index: 5;
     }
 
-    /* O Submarino */
+   /* O Submarino */
     #submarine {
       position: absolute;
       left: 50%;
@@ -71,7 +72,7 @@
       filter: drop-shadow(0 0 10px gold);
     }
 
-    /* Interface de Cartas [cite: 34, 1, 70] */
+  /* Interface de Cartas [cite: 34, 1, 70] */
     #ui-panel {
       margin-top: 20px;
       text-align: center;
@@ -79,7 +80,7 @@
       max-width: 600px;
     }
 
-    .stats {
+  .stats {
       font-size: 1.5rem;
       margin-bottom: 15px;
       padding: 10px;
@@ -88,13 +89,13 @@
       border: 1px solid #444;
     }
 
-    .card-group {
+  .card-group {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       gap: 10px;
     }
 
-    button {
+  button {
       padding: 15px 5px;
       border: none;
       border-radius: 8px;
@@ -105,23 +106,23 @@
       font-size: 0.9rem;
     }
 
-    button:active {
+   button:active {
       transform: scale(0.95);
     }
 
-    .btn-pos {
+  .btn-pos {
       background-color: var(--pos-color);
     }
 
-    .btn-neg {
+  .btn-neg {
       background-color: var(--neg-color);
     }
 
-    .btn-spec {
+  .btn-spec {
       background-color: var(--spec-color);
     }
 
-    .log {
+  .log {
       margin-top: 15px;
       font-size: 0.9rem;
       color: #aaa;
@@ -141,19 +142,19 @@
   <div id="ui-panel">
     <div class="stats">Profundidade: <span id="depth-display">0</span>m</div>
 
-    <div class="card-group">
+   <div class="card-group">
       <button class="btn-pos" onclick="updateDepth(10)">ENERGIA +10</button>
       <button class="btn-pos" onclick="updateDepth(5)">ENERGIA +5</button>
 
-      <button class="btn-neg" onclick="updateDepth(-5)">DESCER -5</button>
+   <button class="btn-neg" onclick="updateDepth(-5)">DESCER -5</button>
       <button class="btn-neg" onclick="updateDepth(-10)">DESCER -10</button>
 
-      <button class="btn-spec" onclick="applySpecial('oposto')">OPOSTO -(X)</button>
+  <button class="btn-spec" onclick="applySpecial('oposto')">OPOSTO -(X)</button>
       <button class="btn-spec" onclick="applySpecial('modulo')">MÓDULO |X|</button>
       <button class="btn-spec" onclick="resetGame()">ZERA TUDO</button>
     </div>
 
-    <div class="log" id="game-log">Aguardando comandos do capitão...</div>
+   <div class="log" id="game-log">Aguardando comandos do capitão...</div>
   </div>
 
   <script>
